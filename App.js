@@ -9,7 +9,7 @@
 import React from 'react';
 import {Image} from 'react-native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import {NavigationContainer} from '@react-navigation/native';
+import {NavigationContainer, DefaultTheme} from '@react-navigation/native';
 import Home, {HomeName, HomeIcon} from './src/screens/Home';
 import Profile, {ProfileName, ProfileIcon} from './src/screens/Profile';
 import DMs, {DMsName, DMsIcon} from './src/screens/DMs';
@@ -25,7 +25,7 @@ const Null = () => null;
 
 export default function App() {
   return (
-    <NavigationContainer>
+    <NavigationContainer theme={ApproachTheme}>
       <Tab.Navigator screenOptions={screenAndTabOptions}>
         <Tab.Screen
           component={Home}
@@ -61,11 +61,27 @@ export default function App() {
   );
 }
 
+// We could also set primary, secondary colors here.
+// See: https://reactnavigation.org/docs/themes/
+const ApproachTheme = {
+  ...DefaultTheme,
+  colors: {
+    ...DefaultTheme.colors,
+    background: 'white',
+  },
+};
+
+// See: https://reactnavigation.org/docs/screen-options/
 const screenAndTabOptions = {
   headerTitle: _ => <Image source={LogoBlack} />,
-  headerStyle: {backgroundColor: '#fff'},
+  headerStyle: {
+    backgroundColor: 'white',
+    borderBottomColor: 'rgba(41, 40, 49, 0.2)',
+    borderBottomWidth: 1,
+  },
   headerTitleAlign: 'center',
-  headerTintColor: '#000',
+  headerTintColor: 'black',
   tabBarShowLabel: false,
   tabBarStyle: {height: 75},
+  contentStyle: {backgroundColor: 'white'},
 };
