@@ -1,6 +1,18 @@
 import React from 'react';
 import {Text} from 'react-native';
 
+export default function ApproachText(props) {
+  return (
+    <Text
+      style={{
+        ...props.style,
+        fontFamily: `Archivo-${convertFontWeight(props.style.fontWeight)}`,
+      }}>
+      {props.children}
+    </Text>
+  );
+}
+
 function convertFontWeight(fontWeight) {
   if (fontWeight === '900') {
     return 'ExtraBold';
@@ -24,16 +36,4 @@ function convertFontWeight(fontWeight) {
     return 'Thin';
   }
   return 'Regular';
-}
-
-export default function ApproachText(props) {
-  return (
-    <Text
-      style={{
-        ...props.style,
-        fontFamily: `Archivo-${convertFontWeight(props.style.fontWeight)}`,
-      }}>
-      {props.children}
-    </Text>
-  );
 }
