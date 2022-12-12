@@ -19,21 +19,21 @@ export default function App() {
   return (
     <NavigationContainer theme={ApproachTheme}>
       <Stack.Navigator>
-        {
-          isSignedIn ? 
-            <Stack.Screen 
-              name='AuthenticatedView'
-              component={AuthenticatedView} 
+        {isSignedIn ? (
+          <Stack.Screen
+            name="AuthenticatedView"
+            component={AuthenticatedView}
+            options={{headerShown: false}}
+          />
+        ) : (
+          <>
+            <Stack.Screen
+              name="Landing"
+              component={Landing}
               options={{headerShown: false}}
-            /> :
-            <>
-              <Stack.Screen 
-                name='Landing'
-                component={Landing}
-                options={{headerShown: false}}
-              />
-            </>
-        }
+            />
+          </>
+        )}
       </Stack.Navigator>
     </NavigationContainer>
   );

@@ -4,11 +4,23 @@ import {Text} from 'react-native';
 function convertFontWeight(fontWeight) {
   if (fontWeight === '900') {
     return 'ExtraBold';
-  } else if (fontWeight === 'bold' || fontWeight === '700' || fontWeight === '800') {
+  } else if (
+    fontWeight === 'bold' ||
+    fontWeight === '700' ||
+    fontWeight === '800'
+  ) {
     return 'Bold';
-  } else if (fontWeight === 'light' || fontWeight === '300' || fontWeight === '400') {
+  } else if (
+    fontWeight === 'light' ||
+    fontWeight === '300' ||
+    fontWeight === '400'
+  ) {
     return 'Light';
-  } else if (fontWeight === 'thin' || fontWeight === '100' || fontWeight === '200') {
+  } else if (
+    fontWeight === 'thin' ||
+    fontWeight === '100' ||
+    fontWeight === '200'
+  ) {
     return 'Thin';
   }
   return 'Regular';
@@ -16,6 +28,12 @@ function convertFontWeight(fontWeight) {
 
 export default function ApproachText(props) {
   return (
-    <Text style={{...props.style, fontFamily: `Archivo-${convertFontWeight(props.style.fontWeight)}`}}>{props.children}</Text>
-  )
+    <Text
+      style={{
+        ...props.style,
+        fontFamily: `Archivo-${convertFontWeight(props.style.fontWeight)}`,
+      }}>
+      {props.children}
+    </Text>
+  );
 }

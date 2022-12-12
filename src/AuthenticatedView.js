@@ -47,7 +47,7 @@ export default function AuthenticatedView() {
         name={ProfileName}
       />
     </Tab.Navigator>
-  )
+  );
 }
 
 // See: https://reactnavigation.org/docs/screen-options/
