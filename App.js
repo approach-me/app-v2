@@ -45,7 +45,7 @@ const ApproachTheme = {
   ...DefaultTheme,
   colors: {
     ...DefaultTheme.colors,
-    background: 'white',
+    background: 'transparent',
     primary: '#3126B4',
   },
 };
