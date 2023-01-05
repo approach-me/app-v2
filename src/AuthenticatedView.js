@@ -7,6 +7,7 @@ import DMs, {DMsName, DMsIcon} from './screens/DMs';
 import Explore, {ExploreName, ExploreIcon} from './screens/Explore';
 import LogoReducedWithGradient from '../assets/logo/reduced-gradient.png';
 import LogoBlack from '../assets/logo/black.png';
+import TestingPage, {TestingPageName} from './screens/TestingPage';
 
 const Tab = createBottomTabNavigator();
 
@@ -17,6 +18,12 @@ const Null = () => null;
 export default function AuthenticatedView() {
   return (
     <Tab.Navigator screenOptions={screenAndTabOptions}>
+      {/* TestingPage is used for testing, and should be commented out when not needed */}
+      <Tab.Screen
+        component={TestingPage}
+        options={{tabBarIcon: () => <Image source={HomeIcon} />}}
+        name={TestingPageName}
+      />
       <Tab.Screen
         component={Home}
         options={{tabBarIcon: () => <Image source={HomeIcon} />}}
