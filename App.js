@@ -15,7 +15,7 @@ import Landing from './src/screens/Landing';
 const Stack = createStackNavigator();
 
 export default function App() {
-  const isSignedIn = false;
+  const isSignedIn = true;
   return (
     <NavigationContainer theme={ApproachTheme}>
       <Stack.Navigator>

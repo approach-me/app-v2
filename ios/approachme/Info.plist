@@ -59,5 +59,17 @@
 		<string>Archivo-Regular.ttf</string>
 		<string>Archivo-Thin.ttf</string>
 	</array>
+
+	<key>NSBluetoothAlwaysUsageDescription</key>
+	<string>We broadcast and scan for bluetooth signals in a way to track all phones nearby you in a privacy-preserving way</string>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>bluetooth-central</string>
+		<string>bluetooth-peripheral</string>
+	</array>
+	<key>UIRequiredDeviceCapabilities</key>
+	<array>
+		<string>bluetooth-le</string>
+	</array>
 </dict>
 </plist>
